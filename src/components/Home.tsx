@@ -10,24 +10,24 @@ const Home: React.FC = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=373940"
-              alt="First slide"
+              src="https://dummyimage.com/300"
+              alt="Convenience"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>Convenient</h3>
+              <p>Small, non-invasive device. All it needs is a Wi-Fi connection.</p>
             </Carousel.Caption>
           </Carousel.Item>
 
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=282c34"
-              alt="Third slide"
+              src="https://dummyimage.com/300"
+              alt="Visual Representation"
             />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Idiot-proof</h3>
+              <p>All the information you need to grow your plant!</p>
             </Carousel.Caption>
           </Carousel.Item>
         
