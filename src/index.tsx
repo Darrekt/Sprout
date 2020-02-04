@@ -7,13 +7,14 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
 import App from './pages/App';
-import Pricing from './components/Pricing'
+import Pricing from './pages/Pricing'
 
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
     <div>
         <Navigation/>
+
         <Router>
             <Switch>
                 <Route path="/about">

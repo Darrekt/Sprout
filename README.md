@@ -27,5 +27,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Tools used
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Components were made with [react-bootstrap](https://react-bootstrap.github.io/).
 
-- All components were made with [react-bootstrap](https://react-bootstrap.github.io/).
+# TO-DO
+- Add the background image with styled components at global
+- Fix the giant Carousel on the main page with some styling
+- Flexbox Card array
