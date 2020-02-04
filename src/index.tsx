@@ -2,18 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
-import App from './App';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+
+import Navigation from './components/Navigation'
+import Home from './pages/Home'
+import App from './pages/App';
 import Pricing from './components/Pricing'
+
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
-    <Router>
-        <div>
-            <Route path="/pricing" component={Pricing} />
-            <Route path="/" component={App} />
-        </div>
-    </Router>
+    <div>
+        <Navigation/>
+        <Router>
+            <Switch>
+                <Route path="/about">
+                    <Pricing />
+                </Route>
+                <Route path="/app">
+                    <App/>
+                </Route>
+                <Route path="/">
+                    <Home/>
+                </Route>
+            </Switch>
+        </Router>
+    </div>
 )
 
 ReactDOM.render(routing, document.getElementById('root'));
