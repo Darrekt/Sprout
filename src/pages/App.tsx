@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import './../components/Card'
-import SimpleCard from './../components/Card';
+import '../components/IconCard'
 
 const App: React.FC = () => {
 	return (
 		<div className="App" >
-			<SimpleCard></SimpleCard>
+			<h1>hi</h1>
 		</div>
 	);
 }
