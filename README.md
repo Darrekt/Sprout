@@ -30,6 +30,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Components were made with [react-bootstrap](https://react-bootstrap.github.io/).
 
 # TO-DO
-- Add the background image with styled components at global
 - Fix the giant Carousel on the main page with some styling
 - Flexbox Card array
