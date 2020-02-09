@@ -14,25 +14,24 @@ class DataGraph extends Component {
         var colour;
         var timeFrame;
 
-        if (this.props.timeFrame === 'hour') {
+        if (this.props.timeFrame === '1h') {
             timeFrame = 3600000;
-        } else if (this.props.timeFrame === 'day') {
-            timeFrame = 86400000;
+        } else if (this.props.timeFrame === '12h') {
+            timeFrame = 43200000;
         } else {
-            timeFrame = 604800000;
+            timeFrame = 86400000;
         }
 
         if (this.props.dataLabel === 'temp') {
-            colour = '#64b968';
+            colour = "#64b968";
         } else if (this.props.dataLabel === 'humidity') {
-            colour = '#ffa624';
+            colour = "#ffa624";
         } else {
-            colour = '#ef524f';
+            colour = "#ef524f";
         }
 
-        console.log(Data);
         for (var i = 0; i < Data.length; i++) {
-            if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() < timeFrame) {
+            if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() <= timeFrame) {
                 labels.push(new Date(Data[i].time));
                 plantLevel.push(this.props.plantValue);
                 if (this.props.dataLabel === 'light') {
@@ -44,6 +43,8 @@ class DataGraph extends Component {
                 }
             }
         }
+
+        console.log(data);
 
         this.state = {
             data: data,
@@ -61,7 +62,7 @@ class DataGraph extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{height: "400px"}}>
                 <canvas ref={this.chartRef}/>
             </div>
         );
@@ -80,7 +81,7 @@ class DataGraph extends Component {
                     }]
                 },
                 legend: {
-                    display: "false"
+                    display: false
                 }
             },
             data: {
@@ -90,13 +91,13 @@ class DataGraph extends Component {
                         data: this.state.data,
                         fill: 'none',
                         pointRadius: 0,
-                        borderColour: this.state.colour,
+                        borderColor: this.state.colour,
                         borderWidth: 3
                     },
                     {
                         data: this.state.plantLevel,
                         fill: true,
-                        backgroundColour: "rgba(10,10,10,0.3)",
+                        backgroundColor: "rgba(10,10,10,0.3)",
                         pointRadius: 0,
                         borderWidth: 0,
                     }

@@ -29,36 +29,36 @@ export default function Dashboard() {
                   <div>
                     <DataGraph
                       dataLabel = 'temp'
-                      plantValue = { 50 }
-                      timeFrame = 'hour'
+                      plantValue = { 15 }
+                      timeFrame = '1h'
                     />
                     <h4 className={classes.cardTitle}>Temp Over Last Hour</h4>
                   </div>
                 )
               },
               {
-                tabName: "Day",
+                tabName: "12 Hours",
                 tabContent: (
                   <div>
                     <DataGraph
                       dataLabel = 'temp'
-                      plantValue = { 50 }
-                      timeFrame = 'day'
+                      plantValue = { 15 }
+                      timeFrame = '12h'
                     />
-                    <h4 className={classes.cardTitle}>Temp Over Last Day</h4>
+                    <h4 className={classes.cardTitle}>Temp Over Last 12 Hours</h4>
                   </div>
                 )
               },
               {
-                tabName: "Week",
+                tabName: "24 Hours",
                 tabContent: (
                   <div>
                     <DataGraph
                       dataLabel = 'temp'
-                      plantValue = { 50 }
-                      timeFrame = 'week'
+                      plantValue = { 15 }
+                      timeFrame = '24h'
                     />
-                    <h4 className={classes.cardTitle}>Temp Over Last Week</h4>
+                    <h4 className={classes.cardTitle}>Temp Over Last 24 Hours</h4>
                   </div>
                 )
               },
@@ -77,35 +77,35 @@ export default function Dashboard() {
                     <DataGraph
                       dataLabel = 'humidity'
                       plantValue = { 50 }
-                      timeFrame = 'hour'
+                      timeFrame = '1h'
                     />
                     <h4 className={classes.cardTitle}>Humidity Over Last Hour</h4>
                   </div>
                 )
               },
               {
-                tabName: "Day",
+                tabName: "12 Hours",
                 tabContent: (
                   <div>
                     <DataGraph
                       dataLabel = 'humidity'
                       plantValue = { 50 }
-                      timeFrame = 'day'
+                      timeFrame = '12h'
                     />
-                    <h4 className={classes.cardTitle}>Humidity Over Last Day</h4>
+                    <h4 className={classes.cardTitle}>Humidity Over Last 12 Hours</h4>
                   </div>
                 )
               },
               {
-                tabName: "Week",
+                tabName: "24 Hours",
                 tabContent: (
                   <div>
                     <DataGraph
                       dataLabel = 'humidity'
                       plantValue = { 50 }
-                      timeFrame = 'week'
+                      timeFrame = '24h'
                     />
-                    <h4 className={classes.cardTitle}>Humidity Over Last Week</h4>
+                    <h4 className={classes.cardTitle}>Humidity Over Last 24 Hours</h4>
                   </div>
                 )
               },
@@ -124,35 +124,35 @@ export default function Dashboard() {
                     <DataGraph
                       dataLabel = 'light'
                       plantValue = { 50 }
-                      timeFrame = 'hour'
+                      timeFrame = '1h'
                     />
                     <h4 className={classes.cardTitle}>Light Over Last Hour</h4>
                   </div>
                 )
               },
               {
-                tabName: "Day",
+                tabName: "12 Hours",
                 tabContent: (
                   <div>
                     <DataGraph
                       dataLabel = 'light'
                       plantValue = { 50 }
-                      timeFrame = 'day'
+                      timeFrame = '12h'
                     />
-                    <h4 className={classes.cardTitle}>Light Over Last Day</h4>
+                    <h4 className={classes.cardTitle}>Light Over Last 12 Hours</h4>
                   </div>
                 )
               },
               {
-                tabName: "Week",
+                tabName: "24 Hours",
                 tabContent: (
                   <div>
                     <DataGraph
                       dataLabel = 'light'
                       plantValue = { 50 }
-                      timeFrame = 'week'
+                      timeFrame = '24h'
                     /> 
-                    <h4 className={classes.cardTitle}>Light Over Last Week</h4>
+                    <h4 className={classes.cardTitle}>Light Over Last 24 Hours</h4>
                   </div>
                 )
               },
