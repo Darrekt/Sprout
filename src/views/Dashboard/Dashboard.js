@@ -1,6 +1,5 @@
 import React from "react";
 // react plugin for creating charts
-import ChartistGraph from "react-chartist";
 // @material-ui/core
 import { makeStyles } from "@material-ui/core/styles";
 // core components
@@ -8,11 +7,7 @@ import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
 
-import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart
-} from "variables/charts.js";
+import DataGraph from "components/dataGraph.js"
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
@@ -32,12 +27,10 @@ export default function Dashboard() {
                 tabName: "Hour",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={dailySalesChart.data}
-                      type="Line"
-                      options={dailySalesChart.options}
-                      listener={dailySalesChart.animation}
+                    <DataGraph
+                      dataLabel = 'temp'
+                      plantValue = { 50 }
+                      timeFrame = 'hour'
                     />
                     <h4 className={classes.cardTitle}>Temp Over Last Hour</h4>
                   </div>
@@ -47,12 +40,10 @@ export default function Dashboard() {
                 tabName: "Day",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={dailySalesChart.data}
-                      type="Line"
-                      options={dailySalesChart.options}
-                      listener={dailySalesChart.animation}
+                    <DataGraph
+                      dataLabel = 'temp'
+                      plantValue = { 50 }
+                      timeFrame = 'day'
                     />
                     <h4 className={classes.cardTitle}>Temp Over Last Day</h4>
                   </div>
@@ -62,12 +53,10 @@ export default function Dashboard() {
                 tabName: "Week",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={dailySalesChart.data}
-                      type="Line"
-                      options={dailySalesChart.options}
-                      listener={dailySalesChart.animation}
+                    <DataGraph
+                      dataLabel = 'temp'
+                      plantValue = { 50 }
+                      timeFrame = 'week'
                     />
                     <h4 className={classes.cardTitle}>Temp Over Last Week</h4>
                   </div>
@@ -85,12 +74,10 @@ export default function Dashboard() {
                 tabName: "Hour",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={emailsSubscriptionChart.data}
-                      type="Line"
-                      options={emailsSubscriptionChart.options}
-                      listener={emailsSubscriptionChart.animation}
+                    <DataGraph
+                      dataLabel = 'humidity'
+                      plantValue = { 50 }
+                      timeFrame = 'hour'
                     />
                     <h4 className={classes.cardTitle}>Humidity Over Last Hour</h4>
                   </div>
@@ -100,12 +87,10 @@ export default function Dashboard() {
                 tabName: "Day",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={emailsSubscriptionChart.data}
-                      type="Line"
-                      options={emailsSubscriptionChart.options}
-                      listener={emailsSubscriptionChart.animation}
+                    <DataGraph
+                      dataLabel = 'humidity'
+                      plantValue = { 50 }
+                      timeFrame = 'day'
                     />
                     <h4 className={classes.cardTitle}>Humidity Over Last Day</h4>
                   </div>
@@ -115,12 +100,10 @@ export default function Dashboard() {
                 tabName: "Week",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={emailsSubscriptionChart.data}
-                      type="Line"
-                      options={emailsSubscriptionChart.options}
-                      listener={emailsSubscriptionChart.animation}
+                    <DataGraph
+                      dataLabel = 'humidity'
+                      plantValue = { 50 }
+                      timeFrame = 'week'
                     />
                     <h4 className={classes.cardTitle}>Humidity Over Last Week</h4>
                   </div>
@@ -138,12 +121,10 @@ export default function Dashboard() {
                 tabName: "Hour",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={completedTasksChart.data}
-                      type="Line"
-                      options={completedTasksChart.options}
-                      listener={completedTasksChart.animation}
+                    <DataGraph
+                      dataLabel = 'light'
+                      plantValue = { 50 }
+                      timeFrame = 'hour'
                     />
                     <h4 className={classes.cardTitle}>Light Over Last Hour</h4>
                   </div>
@@ -153,13 +134,11 @@ export default function Dashboard() {
                 tabName: "Day",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={completedTasksChart.data}
-                      type="Line"
-                      options={completedTasksChart.options}
-                      listener={completedTasksChart.animation}
-                    />  
+                    <DataGraph
+                      dataLabel = 'light'
+                      plantValue = { 50 }
+                      timeFrame = 'day'
+                    />
                     <h4 className={classes.cardTitle}>Light Over Last Day</h4>
                   </div>
                 )
@@ -168,13 +147,11 @@ export default function Dashboard() {
                 tabName: "Week",
                 tabContent: (
                   <div>
-                    <ChartistGraph
-                      className="ct-chart"
-                      data={completedTasksChart.data}
-                      type="Line"
-                      options={completedTasksChart.options}
-                      listener={completedTasksChart.animation}
-                    />  
+                    <DataGraph
+                      dataLabel = 'light'
+                      plantValue = { 50 }
+                      timeFrame = 'week'
+                    /> 
                     <h4 className={classes.cardTitle}>Light Over Last Week</h4>
                   </div>
                 )
