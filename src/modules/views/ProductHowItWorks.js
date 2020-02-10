@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import Button from '../components/Button';
 import Typography from '../components/Typography';
 
 const styles = theme => ({
@@ -27,7 +26,7 @@ const styles = theme => ({
     padding: theme.spacing(0, 5),
   },
   title: {
-    marginBottom: theme.spacing(14),
+    marginBottom: theme.spacing(7),
   },
   number: {
     fontSize: 24,
@@ -60,7 +59,7 @@ function ProductHowItWorks(props) {
         <img
           src="/static/assets/productCurvyLines.png"
           className={classes.curvyLines}
-          alt="curvy lines"
+          alt="missing curvies"
         />
         <Typography variant="h4" marked="center" className={classes.title} component="h2">
           How it works
@@ -71,12 +70,12 @@ function ProductHowItWorks(props) {
               <div className={classes.item}>
                 <div className={classes.number}>1.</div>
                 <img
-                  src="/static/assets/productHowItWorks1.svg"
+                  src="/static/assets/icons/patience.svg"
                   alt="suitcase"
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
+                  Leave your device in a place where you'd like to grow a plant.
                 </Typography>
               </div>
             </Grid>
@@ -84,12 +83,12 @@ function ProductHowItWorks(props) {
               <div className={classes.item}>
                 <div className={classes.number}>2.</div>
                 <img
-                  src="/static/assets/productHowItWorks2.svg"
+                  src="/static/assets/icons/data.svg"
                   alt="graph"
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so be quick.
+                  Use our web interface to find out how well your plant will grow!
                 </Typography>
               </div>
             </Grid>
@@ -97,13 +96,12 @@ function ProductHowItWorks(props) {
               <div className={classes.item}>
                 <div className={classes.number}>3.</div>
                 <img
-                  src="/static/assets/productHowItWorks3.svg"
+                  src="/static/assets/icons/growth.svg"
                   alt="clock"
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
+                  Start growing, with love.
                 </Typography>
               </div>
             </Grid>

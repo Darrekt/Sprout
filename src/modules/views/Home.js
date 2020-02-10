@@ -4,17 +4,17 @@ import ProductCategories from './ProductCategories';
 import ProductHero from './ProductHero';
 import ProductValues from './ProductValues';
 import ProductHowItWorks from './ProductHowItWorks';
-import ProductCTA from './ProductCTA';
+import AppFooter from './AppFooter';
 
 
 function Home() {
   return (
     <React.Fragment>
       <ProductHero />
-      <ProductHowItWorks />
-      <ProductCategories />
       <ProductValues />
-      <ProductCTA />
+      <ProductCategories />
+      <ProductHowItWorks />
+      <AppFooter />
     </React.Fragment>
   );
 }

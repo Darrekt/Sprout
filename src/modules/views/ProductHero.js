@@ -5,7 +5,6 @@ import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 
 
-
 const styles = theme => ({
   background: {
     backgroundColor: 'transparent', // Average color of the background image.
@@ -18,7 +17,7 @@ const styles = theme => ({
     marginBottom: theme.spacing(4),
     marginTop: theme.spacing(4),
     [theme.breakpoints.up('sm')]: {
-      marginTop: theme.spacing(10),
+      marginTop: theme.spacing(5),
     },
   },
   more: {
@@ -35,10 +34,11 @@ function ProductHero(props) {
         Grow your garden
       </Typography>
       <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
-      Sprout is a low-cost Internet-of-Things device that aims to help you be a better plant owner! Using embedded sensors and a wifi-chip, sprout outputs real-time data to a simple web application that lets you determine if a given spot is a good place to grow a plant.
+        Tired of your plants dying? New to gardening? Or just unsure? Sprout is a small, low-cost monitoring device that helps you 
+        decide if a plant can grow in a given space!
       </Typography>
       <Typography variant="body2" color="inherit" className={classes.more}>
-        Discover the experience
+        Find out more!
       </Typography>
     </ProductHeroLayout>
   );
