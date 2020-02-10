@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import '../components/IconCard'
 
 const App: React.FC = () => {

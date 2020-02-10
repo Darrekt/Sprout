@@ -5,10 +5,10 @@ import './index.css';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { createGlobalStyle } from "styled-components"
 
-import Navigation from './components/Navigation'
-import Home from './pages/Home'
-import App from './pages/App';
-import Pricing from './pages/About'
+import Navigation from './modules/components/Navigation'
+import Home from './modules/views/Home'
+import App from './modules/views/App';
+import Pricing from './modules/views/About'
 
 import * as serviceWorker from './serviceWorker';
 

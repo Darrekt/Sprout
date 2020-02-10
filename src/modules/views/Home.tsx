@@ -13,6 +13,10 @@ const StyledJumbo = styled(Jumbotron)`
 	margin-bottom: 10vh;
 `
 
+const StyledContainer = styled(Container)`
+	text-align: center;
+`
+
 const Home: React.FC = () => {
 	return (
 		<div>
@@ -22,8 +26,8 @@ const Home: React.FC = () => {
 				<h5>Sprout is a low-cost Internet-of-Things device that aims to help you be a better plant owner!</h5>
 				<p>Using embedded sensors and a wifi-chip, sprout outputs real-time data to a simple web application that lets you determine if a given spot is a good place to grow a plant.</p>
 				<br/>
-				{/*Container Here*/}
-				<Container>
+
+				<StyledContainer>
 					<Row>
 						<Col>
 							<IconCard
@@ -45,8 +49,8 @@ const Home: React.FC = () => {
 						</Col>
 					</Row>
 
-				</Container>
-				{/*End Container*/}
+				</StyledContainer>
+
 			</StyledJumbo>
 			{/*
 			Demo Video Here*/}
