@@ -123,7 +123,7 @@ export default function Dashboard() {
                   <div>
                     <DataGraph
                       dataLabel = 'light'
-                      plantValue = { 50 }
+                      plantValue = { 20000 }
                       timeFrame = '1h'
                     />
                     <h4 className={classes.cardTitle}>Light Over Last Hour</h4>
@@ -136,7 +136,7 @@ export default function Dashboard() {
                   <div>
                     <DataGraph
                       dataLabel = 'light'
-                      plantValue = { 50 }
+                      plantValue = { 20000 }
                       timeFrame = '12h'
                     />
                     <h4 className={classes.cardTitle}>Light Over Last 12 Hours</h4>
@@ -149,7 +149,7 @@ export default function Dashboard() {
                   <div>
                     <DataGraph
                       dataLabel = 'light'
-                      plantValue = { 50 }
+                      plantValue = { 20000 }
                       timeFrame = '24h'
                     /> 
                     <h4 className={classes.cardTitle}>Light Over Last 24 Hours</h4>

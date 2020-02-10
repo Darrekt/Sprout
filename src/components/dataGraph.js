@@ -31,7 +31,7 @@ class DataGraph extends Component {
         }
 
         for (var i = 0; i < Data.length; i++) {
-            if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() <= timeFrame) {
+            if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() <= timeFrame && (new Date()).getTime() - (new Date(Data[i].time)).getTime() >= 0) {
                 labels.push(new Date(Data[i].time));
                 plantLevel.push(this.props.plantValue);
                 if (this.props.dataLabel === 'light') {

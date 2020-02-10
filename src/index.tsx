@@ -7,7 +7,7 @@ import { createGlobalStyle } from "styled-components"
 
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
-import App from './pages/App';
+import App from './pages/App.js';
 import Pricing from './pages/About'
 
 import * as serviceWorker from './serviceWorker';
