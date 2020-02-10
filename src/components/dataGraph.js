@@ -68,6 +68,12 @@ class DataGraph extends Component {
         );
     }
 
+    componentDidUpdate() {
+        this.myChart.data.datasets[1].data = [];
+        this.myChart.data.datasets[1].data = this.myChart.data.labels.map(_ => this.props.plantValue);
+        this.myChart.update();
+    }
+
     componentDidMount() {
 
         this.myChart = new Chart(this.chartRef.current, {
@@ -97,7 +103,7 @@ class DataGraph extends Component {
                     {
                         data: this.state.plantLevel,
                         fill: true,
-                        backgroundColor: "rgba(10,10,10,0.3)",
+                        backgroundColor: "rgba(5,5,5,0.2)",
                         pointRadius: 0,
                         borderWidth: 0,
                     }
