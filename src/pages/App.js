@@ -19,26 +19,29 @@ export default function Dashboard() {
 
   const [plantTemp, setPlantTemp] = React.useState(20.0);
   const [plantHumidity, setPlantHumidity] = React.useState(50.0);
-  const [plantLight, setPlantLight] = React.useState(20000.0);
+  const [plantLight, setPlantLight] = React.useState(6000.0);
 
   const handleChange = plant => {
     if (plant === 'home-plant') {
       setPlantTemp(20.0);
       setPlantHumidity(50.0);
-      setPlantLight(20000.0);
+      setPlantLight(6000.0);
     } else if (plant === 'herb') {
       setPlantTemp(20.0);
       setPlantHumidity(60.0);
-      setPlantLight(30000.0);
+      setPlantLight(7000.0);
     } else if (plant === 'succulent') {
       setPlantTemp(25.0);
       setPlantHumidity(30.0);
-      setPlantLight(30000.0);
+      setPlantLight(8000.0);
     }
   }
 
   return (
     <div>
+      <DropDown
+        handleChange = { handleChange }  
+      />
       <GridContainer>
         <GridItem xs={12} sm={12} md={4}>
           <CustomTabs
@@ -182,9 +185,6 @@ export default function Dashboard() {
           />
         </GridItem>
       </GridContainer>
-      <DropDown
-        handleChange = { handleChange }  
-      />
     </div>
   );
 }

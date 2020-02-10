@@ -1,5 +1,4 @@
 import Chart from 'chart.js'
-import Data from 'assets/data/graph_data.json'
 
 var React = require('react');
 var Component = React.Component;
@@ -13,6 +12,7 @@ class DataGraph extends Component {
         var labels = [];
         var colour;
         var timeFrame;
+        var yMax;
 
         if (this.props.timeFrame === '1h') {
             timeFrame = 3600000;
@@ -24,33 +24,22 @@ class DataGraph extends Component {
 
         if (this.props.dataLabel === 'temp') {
             colour = "#64b968";
+            yMax = 60;
         } else if (this.props.dataLabel === 'humidity') {
             colour = "#ffa624";
+            yMax = 100;
         } else {
             colour = "#ef524f";
+            yMax = 20000;
         }
-
-        for (var i = 0; i < Data.length; i++) {
-            if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() <= timeFrame && (new Date()).getTime() - (new Date(Data[i].time)).getTime() >= 0) {
-                labels.push(new Date(Data[i].time));
-                plantLevel.push(this.props.plantValue);
-                if (this.props.dataLabel === 'light') {
-                    data.push(Data[i].light);
-                } else if (this.props.dataLabel === 'temp') {
-                    data.push(Data[i].temp);
-                } else {
-                    data.push(Data[i].humidity);
-                }
-            }
-        }
-
-        console.log(data);
 
         this.state = {
             data: data,
             plantLevel: plantLevel,
             labels: labels,
-            colour: colour
+            colour: colour,
+            timeFrame: timeFrame,
+            yMax: yMax
         };
         this.chartRef = React.createRef();
     }
@@ -69,12 +58,44 @@ class DataGraph extends Component {
     }
 
     componentDidUpdate() {
-        this.myChart.data.datasets[1].data = [];
+        console.log(this.state.data);
+        this.myChart.data.datasets[0].data = this.state.data;
+        this.myChart.data.labels = this.state.labels;
         this.myChart.data.datasets[1].data = this.myChart.data.labels.map(_ => this.props.plantValue);
         this.myChart.update();
     }
 
     componentDidMount() {
+        
+        fetch('http://127.0.0.1:8081/data.json')
+        .then(response => response.json())
+        .then((Data) => {
+            var labels = [];
+            var data = [];
+            var plantLevel = [];
+            for (var i = 0; i < Data.length; i++) {
+                if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() <= this.state.timeFrame && (new Date()).getTime() - (new Date(Data[i].time)).getTime() >= 0) {
+                    labels.push(new Date(Data[i].time));
+                    plantLevel.push(this.props.plantValue);
+                    if (this.props.dataLabel === 'light') {
+                        data.push(Data[i].light);
+                    } else if (this.props.dataLabel === 'temp') {
+                        data.push(Data[i].temp);
+                    } else {
+                        data.push(Data[i].humidity);
+                    }
+                }
+            }
+            this.setState({
+                data: data,
+                labels: labels,
+                plantLevel: plantLevel
+            });
+        })
+        .catch((error) => {
+            // handle your errors here
+            console.error(error)
+        });
 
         this.myChart = new Chart(this.chartRef.current, {
             type: "line",
@@ -84,6 +105,12 @@ class DataGraph extends Component {
                     xAxes: [{
                         type: 'time',
                         time: {unit: 'minute'}
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: this.state.yMax
+                        }
                     }]
                 },
                 legend: {
