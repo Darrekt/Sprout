@@ -67,7 +67,7 @@ class DataGraph extends Component {
 
     componentDidMount() {
         
-        fetch('http://127.0.0.1:8081/data.json')
+        fetch('http://https://sprout-embedded-backend.herokuapp.com/data.json')
         .then(response => response.json())
         .then((Data) => {
             var labels = [];
