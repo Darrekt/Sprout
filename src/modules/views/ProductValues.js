@@ -85,7 +85,7 @@ function ProductValues(props) {
               				</Typography>
 						</div>
 					</Grid>
-					<Grid item xs={12} md={12}>
+					<Grid item xs={12} md={8}>
 						<Typography>
 							Using embedded sensors and a wifi-chip, Sprout outputs real-time data to a simple web application 
 							that lets you determine if a given spot is a good place to grow a plant. 

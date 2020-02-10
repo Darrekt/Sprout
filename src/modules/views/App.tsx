@@ -1,10 +1,9 @@
 import React from 'react';
-import '../components/IconCard'
 
 const App: React.FC = () => {
 	return (
 		<div className="App" >
-			<h1>hi</h1>
+			<h1>Replace me</h1>
 		</div>
 	);
 }
