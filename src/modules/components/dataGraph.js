@@ -66,36 +66,37 @@ class DataGraph extends Component {
     }
 
     componentDidMount() {
-        
-        fetch('http://https://sprout-embedded-backend.herokuapp.com/data.json')
-        .then(response => response.json())
-        .then((Data) => {
-            var labels = [];
-            var data = [];
-            var plantLevel = [];
-            for (var i = 0; i < Data.length; i++) {
-                if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() <= this.state.timeFrame && (new Date()).getTime() - (new Date(Data[i].time)).getTime() >= 0) {
-                    labels.push(new Date(Data[i].time));
-                    plantLevel.push(this.props.plantValue);
-                    if (this.props.dataLabel === 'light') {
-                        data.push(Data[i].light);
-                    } else if (this.props.dataLabel === 'temp') {
-                        data.push(Data[i].temp);
-                    } else {
-                        data.push(Data[i].humidity);
+        window.setInterval(() => {
+            fetch('http://127.0.0.1:5000/data.json')
+            .then(response => response.json())
+            .then((Data) => {
+                var labels = [];
+                var data = [];
+                var plantLevel = [];
+                for (var i = 0; i < Data.length; i++) {
+                    if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() <= this.state.timeFrame && (new Date()).getTime() - (new Date(Data[i].time)).getTime() >= 0) {
+                        labels.push(new Date(Data[i].time));
+                        plantLevel.push(this.props.plantValue);
+                        if (this.props.dataLabel === 'light') {
+                            data.push(Data[i].light);
+                        } else if (this.props.dataLabel === 'temp') {
+                            data.push(Data[i].temp);
+                        } else {
+                            data.push(Data[i].humidity);
+                        }
                     }
                 }
-            }
-            this.setState({
-                data: data,
-                labels: labels,
-                plantLevel: plantLevel
+                this.setState({
+                    data: data,
+                    labels: labels,
+                    plantLevel: plantLevel
+                });
+            })
+            .catch((error) => {
+                // handle your errors here
+                console.error(error)
             });
-        })
-        .catch((error) => {
-            // handle your errors here
-            console.error(error)
-        });
+        }, 3000);
 
         this.myChart = new Chart(this.chartRef.current, {
             type: "line",
