@@ -10,7 +10,7 @@ function Copyright() {
     <React.Fragment>
       {'© '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Darrick Lau
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -76,34 +76,10 @@ export default function AppFooter() {
               className={classes.iconsWrapper}
               spacing={2}
             >
-              <Grid item className={classes.icons}>
-                <a href="https://material-ui.com/" className={classes.icon}>
-                  <img src="/static/assets/icons/appFooterFacebook.png" alt="Facebook" />
-                </a>
-                <a href="https://twitter.com/MaterialUI" className={classes.icon}>
-                  <img src="/static/assets/icons/appFooterTwitter.png" alt="Twitter" />
-                </a>
-              </Grid>
               <Grid item>
                 <Copyright />
               </Grid>
             </Grid>
-          </Grid>
-          <Grid item xs={6} sm={4} md={2}>
-            <Typography variant="h6" marked="left" gutterBottom>
-              Legal
-            </Typography>
-            <ul className={classes.list}>
-              <li className={classes.listItem}>
-                <Link href="/premium-assets/icons/terms/">Terms</Link>
-              </li>
-              <li className={classes.listItem}>
-                <Link href="/premium-assets/icons/privacy/">Privacy</Link>
-              </li>
-            </ul>
-          </Grid>
-          <Grid item xs={6} sm={8} md={4}>
-            
           </Grid>
           <Grid item>
             <Typography variant="caption">

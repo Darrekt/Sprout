@@ -1,6 +1,6 @@
 import withRoot from './../withRoot';
 import React from 'react';
-import ProductCategories from './ProductCategories';
+import ProductDemo from './ProductDemo';
 import ProductHero from './ProductHero';
 import ProductValues from './ProductValues';
 import ProductHowItWorks from './ProductHowItWorks';
@@ -12,7 +12,7 @@ function Home() {
     <React.Fragment>
       <ProductHero />
       <ProductValues />
-      <ProductCategories />
+      <ProductDemo />
       <ProductHowItWorks />
       <AppFooter />
     </React.Fragment>

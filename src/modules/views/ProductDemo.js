@@ -6,8 +6,8 @@ import Typography from '../components/Typography';
 
 const styles = theme => ({
   root: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(4),
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
   },
   backdrop: {
     position: 'absolute',
@@ -21,20 +21,22 @@ const styles = theme => ({
   },
 });
 
-function ProductCategories(props) {
+function ProductDemo(props) {
   const { classes } = props;
 
   return (
-    <Container className={classes.root} component="section">
-      <Typography variant="h4" marked="center" align="center" component="h2">
-        See it in action
-      </Typography>
-    </Container>
+      <Container classNAme={classes.backdrop} component="section">
+        <Container className={classes.root} component="section">
+          <Typography variant="h4" marked="center" align="center" component="h2">
+            See it in action
+          </Typography>
+        </Container>
+      </Container>
   );
 }
 
-ProductCategories.propTypes = {
+ProductDemo.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductCategories);
+export default withStyles(styles)(ProductDemo);

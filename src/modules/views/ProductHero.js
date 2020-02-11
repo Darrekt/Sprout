@@ -16,12 +16,14 @@ const styles = theme => ({
   h5: {
     marginBottom: theme.spacing(4),
     marginTop: theme.spacing(4),
+    marginLeft: theme.spacing(7),
+    marginRight: theme.spacing(7),
     [theme.breakpoints.up('sm')]: {
       marginTop: theme.spacing(5),
     },
   },
   more: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(8),
   },
 });
 
@@ -37,7 +39,7 @@ function ProductHero(props) {
         Tired of your plants dying? New to gardening? Or just unsure? Sprout is a small, low-cost monitoring device that helps you 
         decide if a plant can grow in a given space!
       </Typography>
-      <Typography variant="body2" color="inherit" className={classes.more}>
+      <Typography variant="h5" color="inherit" className={classes.more}>
         Find out more!
       </Typography>
     </ProductHeroLayout>

@@ -20,7 +20,6 @@ const GlobalStyle = createGlobalStyle`
         -o-background-size: cover;
         background-size: cover;
     }
-
 `
 
 const Routing: React.FC = () => (
