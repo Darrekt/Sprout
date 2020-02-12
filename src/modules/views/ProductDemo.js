@@ -29,7 +29,7 @@ function ProductDemo(props) {
 		height: '390',
 		width: '640',
 		playerVars: { // https://developers.google.com/youtube/player_parameters
-		autoplay: 1
+		autoplay: 0
 		}
 	};
 
