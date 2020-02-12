@@ -88,10 +88,10 @@ function ProductValues(props) {
 					<Grid item xs={12}>
 						<div className={classes.item}>
 							<Typography variant="h5" className={classes.title}>
-								Using embedded sensors and a wifi-chip, Sprout outputs real-time data to a simple web application 
-								that lets you determine if a given spot is a good place to grow a plant. 
-							</Typography>
-							<Typography variant="h5" className={classes.title}>
+								Sprout outputs real-time data to a simple web application 
+								that shows you if a given spot is a is suitable for your plant to grow! 
+								Data is clearly visualised with minimum levels, showing what is inhibiting 
+								your plant's growth!
 								Just find the parameters your plant needs, or choose from our presets!
 							</Typography>
 						</div>
