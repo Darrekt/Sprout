@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
+import YouTube from 'react-youtube';
 
 const styles = theme => ({
   root: {
     paddingTop: theme.spacing(5),
-    paddingBottom: theme.spacing(5),
+	paddingBottom: theme.spacing(5),
+	textAlign: 'center',
   },
   backdrop: {
     position: 'absolute',
@@ -23,20 +25,31 @@ const styles = theme => ({
 
 function ProductDemo(props) {
   const { classes } = props;
+  const opts = {
+		height: '390',
+		width: '640',
+		playerVars: { // https://developers.google.com/youtube/player_parameters
+		autoplay: 0
+		}
+	};
 
   return (
-      <Container classNAme={classes.backdrop} component="section">
-        <Container className={classes.root} component="section">
-          <Typography variant="h4" marked="center" align="center" component="h2">
-            See it in action
-          </Typography>
-        </Container>
-      </Container>
+		<Container className={classes.root} component="section">
+			<div className={styles.backdrop} />
+			<Typography variant="h4" marked="center" align="center" component="h2">
+				See it in action
+			</Typography>
+			<br/>
+			<YouTube
+				videoId="ZVXlv0yWOMI"
+				opts={opts}
+			/>
+		</Container>
   );
 }
 
 ProductDemo.propTypes = {
-  classes: PropTypes.object.isRequired,
+  	classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(ProductDemo);
