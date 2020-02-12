@@ -19,21 +19,21 @@ export default function Dashboard() {
 
   const [plantTemp, setPlantTemp] = React.useState(20.0);
   const [plantHumidity, setPlantHumidity] = React.useState(50.0);
-  const [plantLight, setPlantLight] = React.useState(6000.0);
+  const [plantLight, setPlantLight] = React.useState(200.0);
 
   const handleChange = plant => {
     if (plant === 'home-plant') {
       setPlantTemp(20.0);
       setPlantHumidity(50.0);
-      setPlantLight(6000.0);
+      setPlantLight(200.0);
     } else if (plant === 'herb') {
       setPlantTemp(20.0);
       setPlantHumidity(60.0);
-      setPlantLight(7000.0);
+      setPlantLight(200.0);
     } else if (plant === 'succulent') {
       setPlantTemp(25.0);
       setPlantHumidity(30.0);
-      setPlantLight(8000.0);
+      setPlantLight(200.0);
     }
   }
 

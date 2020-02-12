@@ -30,7 +30,7 @@ class DataGraph extends Component {
             yMax = 100;
         } else {
             colour = "#ef524f";
-            yMax = 20000;
+            yMax = 600;
         }
 
         this.state = {
@@ -66,7 +66,7 @@ class DataGraph extends Component {
     }
 
     componentDidMount() {
-        window.setInterval(() => {
+        // window.setInterval(() => {
             fetch('http://127.0.0.1:5000/data.json')
             .then(response => response.json())
             .then((Data) => {
@@ -96,7 +96,7 @@ class DataGraph extends Component {
                 // handle your errors here
                 console.error(error)
             });
-        }, 3000);
+        // }, 3000);
 
         this.myChart = new Chart(this.chartRef.current, {
             type: "line",
