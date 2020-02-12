@@ -25,18 +25,17 @@ function ProductDemo(props) {
   const { classes } = props;
 
   return (
-      <Container classNAme={classes.backdrop} component="section">
-        <Container className={classes.root} component="section">
-          <Typography variant="h4" marked="center" align="center" component="h2">
-            See it in action
-          </Typography>
-        </Container>
-      </Container>
+		<Container className={classes.root} component="section">
+			<div className={styles.backdrop} />
+			<Typography variant="h4" marked="center" align="center" component="h2">
+				See it in action
+			</Typography>
+		</Container>
   );
 }
 
 ProductDemo.propTypes = {
-  classes: PropTypes.object.isRequired,
+  	classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(ProductDemo);

@@ -65,8 +65,8 @@ function ProductHeroLayout(props) {
         <img
           className={classes.arrowDown}
           src="/static/assets/productHeroArrowDown.png"
-          height="16"
-          width="12"
+          height="30"
+          width="21"
           alt="arrow down"
         />
       </Container>
