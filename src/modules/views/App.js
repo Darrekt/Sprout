@@ -21,6 +21,10 @@ export default function Dashboard() {
   const [plantHumidity, setPlantHumidity] = React.useState(50.0);
   const [plantLight, setPlantLight] = React.useState(200.0);
 
+  const [averageTemp, setAverageTemp] = React.useState(0.0);
+  const [averageHumidity, setAverageHumidity] = React.useState(0.0);
+  const [averageLight, setAverageLight] = React.useState(0.0);
+
   const handleChange = plant => {
     if (plant === 'home-plant') {
       setPlantTemp(20.0);
@@ -34,6 +38,16 @@ export default function Dashboard() {
       setPlantTemp(25.0);
       setPlantHumidity(30.0);
       setPlantLight(200.0);
+    }
+  }
+
+  const updateAverages = (metric, avg) => {
+    if (metric === 'temp') {
+      setAverageTemp(avg);
+    } else if (metric === 'humidity') {
+      setAverageHumidity(avg);
+    } else if (metric === 'light') {
+      setAverageLight(avg);
     }
   }
 
@@ -56,8 +70,9 @@ export default function Dashboard() {
                       dataLabel = 'temp'
                       plantValue = { plantTemp }
                       timeFrame = '1h'
+                      updateAverages = { updateAverages }
                     />
-                    <h4 className={classes.cardTitle}>Temp Over Last Hour</h4>
+                    <h4 className={classes.cardTitle}>Temp Over Last Hour  -  Average: { averageTemp }</h4>
                   </div>
                 )
               },
@@ -69,8 +84,9 @@ export default function Dashboard() {
                       dataLabel = 'temp'
                       plantValue = { plantTemp }
                       timeFrame = '12h'
+                      updateAverages = { updateAverages }
                     />
-                    <h4 className={classes.cardTitle}>Temp Over Last 12 Hours</h4>
+                    <h4 className={classes.cardTitle}>Temp Over Last 12 Hours  -  Average: { averageTemp }</h4>
                   </div>
                 )
               },
@@ -82,8 +98,9 @@ export default function Dashboard() {
                       dataLabel = 'temp'
                       plantValue = { plantTemp }
                       timeFrame = '24h'
+                      updateAverages = { updateAverages }
                     />
-                    <h4 className={classes.cardTitle}>Temp Over Last 24 Hours</h4>
+                    <h4 className={classes.cardTitle}>Temp Over Last 24 Hours  -  Average: { averageTemp }</h4>
                   </div>
                 )
               },
@@ -103,8 +120,9 @@ export default function Dashboard() {
                       dataLabel = 'humidity'
                       plantValue = { plantHumidity }
                       timeFrame = '1h'
+                      updateAverages = { updateAverages }
                     />
-                    <h4 className={classes.cardTitle}>Humidity Over Last Hour</h4>
+                    <h4 className={classes.cardTitle}>Humidity Over Last Hour  -  Average: { averageHumidity }</h4>
                   </div>
                 )
               },
@@ -116,8 +134,9 @@ export default function Dashboard() {
                       dataLabel = 'humidity'
                       plantValue = { plantHumidity }
                       timeFrame = '12h'
+                      updateAverages = { updateAverages }
                     />
-                    <h4 className={classes.cardTitle}>Humidity Over Last 12 Hours</h4>
+                    <h4 className={classes.cardTitle}>Humidity Over Last 12 Hours  -  Average: { averageHumidity }</h4>
                   </div>
                 )
               },
@@ -129,8 +148,9 @@ export default function Dashboard() {
                       dataLabel = 'humidity'
                       plantValue = { plantHumidity }
                       timeFrame = '24h'
+                      updateAverages = { updateAverages }
                     />
-                    <h4 className={classes.cardTitle}>Humidity Over Last 24 Hours</h4>
+                    <h4 className={classes.cardTitle}>Humidity Over Last 24 Hours  -  Average: { averageHumidity }</h4>
                   </div>
                 )
               },
@@ -150,8 +170,9 @@ export default function Dashboard() {
                       dataLabel = 'light'
                       plantValue = { plantLight }
                       timeFrame = '1h'
+                      updateAverages = { updateAverages }
                     />
-                    <h4 className={classes.cardTitle}>Light Over Last Hour</h4>
+                    <h4 className={classes.cardTitle}>Light Over Last Hour - Average: { averageLight }</h4>
                   </div>
                 )
               },
@@ -163,8 +184,9 @@ export default function Dashboard() {
                       dataLabel = 'light'
                       plantValue = { plantLight }
                       timeFrame = '12h'
+                      updateAverages = { updateAverages }
                     />
-                    <h4 className={classes.cardTitle}>Light Over Last 12 Hours</h4>
+                    <h4 className={classes.cardTitle}>Light Over Last 12 Hours  -  Average: { averageLight }</h4>
                   </div>
                 )
               },
@@ -176,8 +198,9 @@ export default function Dashboard() {
                       dataLabel = 'light'
                       plantValue = { plantLight }
                       timeFrame = '24h'
+                      updateAverages = { updateAverages }
                     /> 
-                    <h4 className={classes.cardTitle}>Light Over Last 24 Hours</h4>
+                    <h4 className={classes.cardTitle}>Light Over Last 24 Hours  -  Average: { averageLight }</h4>
                   </div>
                 )
               },

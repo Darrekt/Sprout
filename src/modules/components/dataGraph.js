@@ -73,6 +73,7 @@ class DataGraph extends Component {
                 var labels = [];
                 var data = [];
                 var plantLevel = [];
+                var total = 0.0;
                 for (var i = 0; i < Data.length; i++) {
                     if ((new Date()).getTime() - (new Date(Data[i].time)).getTime() <= this.state.timeFrame && (new Date()).getTime() - (new Date(Data[i].time)).getTime() >= 0) {
                         labels.push(new Date(Data[i].time));
@@ -84,8 +85,16 @@ class DataGraph extends Component {
                         } else {
                             data.push(Data[i].humidity);
                         }
+                        total += data[data.length - 1];
                     }
                 }
+                var average;
+                if (data.length === 0) {
+                    average = 0;
+                } else {
+                    average = Math.round(total / (data.length) * 100) / 100;
+                }
+                this.props.updateAverages(this.props.dataLabel, average);
                 this.setState({
                     data: data,
                     labels: labels,
