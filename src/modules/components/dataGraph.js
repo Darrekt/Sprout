@@ -66,7 +66,7 @@ class DataGraph extends Component {
     }
 
     componentDidMount() {
-        // window.setInterval(() => {
+        window.setInterval(() => {
             fetch('http://127.0.0.1:5000/data.json')
             .then(response => response.json())
             .then((Data) => {
@@ -96,7 +96,16 @@ class DataGraph extends Component {
                 // handle your errors here
                 console.error(error)
             });
-        // }, 3000);
+        }, 1000);
+
+        var axisLabel = '';
+        if (this.props.dataLabel === 'light') {
+            axisLabel = 'Light Level (Lux)';
+        } else if (this.props.dataLabel === 'temp') {
+            axisLabel = 'Temperature (°C)';
+        } else {
+            axisLabel = 'Humidity (RH%)';
+        }
 
         this.myChart = new Chart(this.chartRef.current, {
             type: "line",
@@ -111,6 +120,10 @@ class DataGraph extends Component {
                         ticks: {
                             min: 0,
                             max: this.state.yMax
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: axisLabel
                         }
                     }]
                 },
