@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
+import Button from '../components/Button';
 
 const styles = theme => ({
   root: {
@@ -105,6 +106,21 @@ function ProductHowItWorks(props) {
                 </Typography>
               </div>
             </Grid>
+			<Grid item xs={12}>
+				<div className={classes.item}>
+					<Button
+					color="secondary"
+					size="large"
+					variant="contained"
+					className={classes.button}
+					component="a"
+					href="/App"
+					>
+					Give it a try!
+					</Button>
+				</div>
+			</Grid>
+			
           </Grid>
         </div>
       </Container>
